@@ -77,13 +77,18 @@ $lista = $categoria->listarStatusAlugado();
 </form>
 
 <br>
-
+    
+<!--
 <form id="form" action="excluir-veiculo.php" method="get">
 <label for="id">Exluir:</label>
     <input type="number" name="id" id="excluir">
  
     <button type="submit" id="btn-excluir">Excluir</button>
 </form>
+-->
+
+
+
 
 <script>
 function confirmarExclusao() {

@@ -1,21 +1,10 @@
 <?php
-
-require_once 'classes/Veiculos.php';
-// Conectar ao banco de dados (substitua os valores conforme necessário)
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "alugue";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verificar a conexão
-if ($conn->connect_error) {
-    die("Erro na conexão com o banco de dados: " . $conn->connect_error);
-}
+// Conectar ao banco de dados
+require_once('classes\Conexaobd.php');
+$conexao = Conexaobd::pegarConexao();
 
 // Verificar se o formulário foi enviado
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Obter os dados do formulário
     $id = $_POST['id'];
     $nome = $_POST['nome'];
@@ -27,17 +16,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $direcao = $_POST['direcao'];
     $cambio = $_POST['cambio'];
     $portas = $_POST['portas'];
-    $codigo = $_POST['codigo'];
-    $status = $_POST['status'];
- 
+    $foto = $_POST['foto'];
+    $ar = $_POST['ar'];
+    $abs = $_POST['abs'];
+    $alugado = isset($_POST['alugado']) ? $_POST['alugado'] : '0';
 
-    $veiculos = new Veiculos();
-    $veiculos->alterar($id, $nome, $marca, $modelo, $ano, $motorizacao, $combustivel, $direcao,$cambio,$portas,$codigo,$status);
+    // Atualizar o veículo no banco de dados
+    $query = "UPDATE tb_adicionar_carro 
+              SET nome = :nome, marca = :marca, modelo = :modelo, ano = :ano, motorizacao = :motorizacao, 
+                  combustivel = :combustivel, direcao = :direcao, cambio = :cambio, portas = :portas, foto = :foto, ar = :ar, abs = :abs, alugado = :alugado
+              WHERE id = :id";
+    $stmt = $conexao->prepare($query);
+    $stmt->bindParam(':id', $id);
+    $stmt->bindParam(':nome', $nome);
+    $stmt->bindParam(':marca', $marca);
+    $stmt->bindParam(':modelo', $modelo);
+    $stmt->bindParam(':ano', $ano);
+    $stmt->bindParam(':motorizacao', $motorizacao);
+    $stmt->bindParam(':combustivel', $combustivel);
+    $stmt->bindParam(':direcao', $direcao);
+    $stmt->bindParam(':cambio', $cambio);
+    $stmt->bindParam(':portas', $portas);
+    $stmt->bindParam(':foto', $foto);
+    $stmt->bindParam(':ar', $ar);
+    $stmt->bindParam(':abs', $abs);
+    $stmt->bindParam(':alugado', $alugado);
+    $stmt->execute();
 
-    include("alterar-veiculo.php");
-    echo "Veiculo alterado com sucesso!";
+    // Redirecionar para a página de visualização do veículo após a alteração
+    header("Location: adc-veiculos.php?id=$id");
+    exit();
 }
-
-// Fechar a conexão com o banco de dados
-$conn->close();
 ?>

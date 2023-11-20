@@ -1,72 +1,57 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alterar Veículo</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
+    <?php
+    // Conectar ao banco de dados
+    require_once('classes\Conexaobd.php');
+    $conexao = Conexaobd::pegarConexao();
 
-<div class="container">
-        <h2>Alterar Veiculo</h2>
-        <form action="alterar-veiculos-post.php" method="post">
-        
-            <input type="hidden" name="id" id="id" class="form-control" placeholder="ID" value="<?php echo $veiculo['id']; ?>" >
-            <div class="form-group">
-                <label for="nome">Nome:</label>
-                <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome" >
-            </div>
-            <div class="form-group">
-                <label for="marca">Marca:</label>
-                <input type="text" name="marca" id="marca" class="form-control" placeholder="Marca" >
-            </div>
-            <div class="form-group">
-                <label for="modelo">Modelo:</label>
-                <input type="text" name="modelo" id="modelo" class="form-control" placeholder="Modelo">
-            </div>
-            <div class="form-group">
-                <label for="ano">Ano:</label>
-                <input type="text" name="ano" id="ano" class="form-control" placeholder="Ano" >
-            </div>
-            <div class="form-group">
-                <label for="motorizacao">Motorização:</label>
-                <input type="text" name="motorizacao" id="motorizacao" class="form-control" placeholder="Motorização" >
-            </div>
-            <div class="form-group">
-                <label for="combustivel">Combustível:</label>
-                <input type="text" name="combustivel" id="combustivel" class="form-control" placeholder="Combustível">
-            </div>
-            <div class="form-group">
-                <label for="direcao">Direção:</label>
-                <input type="text" name="direcao" id="direcao" class="form-control" placeholder="Direção">
-            </div>
-            <div class="form-group">
-                <label for="cambio">Câmbio:</label>
-                <input type="text" name="cambio" id="cambio" class="form-control" placeholder="Câmbio" >
-            </div>
-            <div class="form-group">
-                <label for="portas">Portas:</label>
-                <input type="text" name="portas" id="portas" class="form-control" placeholder="Portas" >
-            </div>
-            <div class="form-group">
-                <label for="codigo">Código:</label>
-                <input type="text" name="codigo" id="codigo" class="form-control" placeholder="Código" >
-            </div>
-            <div class="form-group">
-                <label for="status">Status:</label>
-                <input type="text" name="status" id="status" class="form-control" placeholder="Status" >
-            </div>
-         
-            <button type="submit" class="btn btn-primary">Alterar</button>
-        </form>
-        <br>
-        <a href="adc-veiculos.php">
-                <button type="submit" class="btn btn-secondary">Voltar</button>
-            </a>
-    </div>
+    // Verificar se o ID do veículo foi fornecido
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
 
+        // Consultar o veículo no banco de dados
+        $query = "SELECT * FROM tb_adicionar_carro WHERE id = :id";
+        $stmt = $conexao->prepare($query);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        $veiculo = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // Verificar se o veículo existe
+        if ($veiculo) {
+    ?>
+            <h1>Alterar Veículo</h1>
+            <form action="alterar-veiculos-post.php" method="post">
+                <!-- Campos do formulário preenchidos com os dados do veículo -->
+                <input type="hidden" name="id" value="<?php echo $veiculo['id']; ?>">
+                Nome: <input type="text" name="nome" value="<?php echo $veiculo['nome']; ?>"><br>
+                Marca: <input type="text" name="marca" value="<?php echo $veiculo['marca']; ?>"><br>
+                Modelo: <input type="text" name="modelo" value="<?php echo $veiculo['modelo']; ?>"><br>
+                Ano: <input type="text" name="ano" value="<?php echo $veiculo['ano']; ?>"><br>
+                Motorização: <input type="text" name="motorizacao" value="<?php echo $veiculo['motorizacao']; ?>"><br>
+                Combustivel: <input type="text" name="combustivel" value="<?php echo $veiculo['combustivel']; ?>"><br>
+                Direção: <input type="text" name="direcao" value="<?php echo $veiculo['direcao']; ?>"><br>
+                Câmbio: <input type="text" name="cambio" value="<?php echo $veiculo['cambio']; ?>"><br>
+                Portas: <input type="text" name="portas" value="<?php echo $veiculo['portas']; ?>"><br>
+                Foto: <input type="file" name="foto" value="<?php echo $veiculo['foto']; ?>"><br>
+                ar: <input type="text" name="ar" value="<?php echo $veiculo['ar']; ?>"><br>
+                abs: <input type="text" name="abs" value="<?php echo $veiculo['abs']; ?>"><br>
+                alugado: <input type="text" name="alugado" value="<?php echo $veiculo['alugado']; ?>"><br>
+
+                <input type="submit" value="Salvar Alterações">
+            </form>
+    <?php
+        } else {
+            echo "Veículo não encontrado.";
+        }
+    } else {
+        echo "ID do veículo não fornecido.";
+    }
+    ?>
 </body>
 </html>
