@@ -6,12 +6,12 @@
   <title>Detalhes do Carro</title>
 
   <!-- Adicione os links do Bootstrap 4 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
     body {
       padding: 20px;
-      background: url('pexels-aleksandar-pasaric-4512439.jpg') no-repeat center center fixed;
+      background: url('../img/pexels-aleksandar-pasaric-4512439.jpg') no-repeat center center fixed;
       background-size: cover;
       background-color: #500266; /* Cor roxa */
       color: #fff; /* Cor do texto */
@@ -43,27 +43,24 @@
 
 <div class="container">
   <div class="car-details">
-    <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "alugue";
+  <?php
+    require_once 'classes/Usuarios.php';
 
-    // Cria conexão
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Conecte-se ao banco de dados
+    $conexao = new mysqli('localhost', 'root', '', 'alugue');
 
-    // Verifica conexão
-    if ($conn->connect_error) {
-      die("Conexão falhou: " . $conn->connect_error);
+    // Verifique a conexão
+    if ($conexao->connect_error) {
+      die("Falha na conexão: " . $conexao->connect_error);
     }
 
-    // Verifica se o id do carro está presente na URL
+    // Verifique se o id do carro está presente na URL
     if(isset($_GET['id'])) {
       $id = $_GET['id'];
 
       // Faz a consulta SQL
       $sql = "SELECT * FROM tb_adicionar_carro WHERE id = $id";
-      $result = $conn->query($sql);
+      $result = $conexao->query($sql);
 
       if ($result->num_rows > 0) {
         // Saída de cada linha
@@ -77,7 +74,7 @@
           echo "<p><strong>Direção:</strong> " . $row["direcao"] . "</p>";
           echo "<p><strong>Câmbio:</strong> " . $row["cambio"] . "</p>";
           echo "<p><strong>Portas:</strong> " . $row["portas"] . "</p>";
-          echo "<img src='" . $row["foto"] . "' alt='Foto do carro' class='img-fluid'>";
+          echo "<img src='../img/" . $row["foto"] . "' alt='Foto do carro' class='img-fluid'>";
         }
       } else {
         echo "<p>0 resultados</p>";
@@ -86,12 +83,13 @@
       echo "<p>ID do carro não especificado.</p>";
     }
 
-    $conn->close();
-    ?>
+    $conexao->close();
+?>
+
     
     <div class="btn-container">
-      <a href="index.php" class="btn btn-primary">Voltar</a>
-      <a href="alugar.php?id=<?php echo $id; ?>" class="btn btn-success">Alugar este veículo</a>
+      <a href="../paginas/index.php" class="btn btn-primary">Voltar</a>
+      <a href="../paginas/alugar.php?id=<?php echo $id; ?>" class="btn btn-success">Alugar este veículo</a>
     </div>
   </div>
 </div>

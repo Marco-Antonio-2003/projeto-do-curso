@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Carros</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/styles_cadastro.css">
 </head>
 <body>
 
@@ -63,10 +63,10 @@
                     echo "<td>" . $row['direcao'] . "</td>";
                     echo "<td>" . $row['cambio'] . "</td>";
                     echo "<td>" . $row['portas'] . "</td>";
-                    echo "<td><img src='" . $row['foto'] . "' alt='Foto do Carro' style='max-width: 100px;'></td>";
+                    echo "<td><img src='../img/" . $row['foto'] . "' alt='Foto do Carro' style='max-width: 100px;'></td>";
                     echo "<td>" . ($row['ar'] == 1 ? 'Sim' : 'Não') . "</td>";
                     echo "<td>" . ($row['abs'] == 1 ? 'Sim' : 'Não') . "</td>";
-                    echo "<td><a href='excluir-carro.php?id=" . $row['id'] . "' class='btn btn-danger'>Excluir</a></td>";
+                    echo "<td><a href='../paginas/excluir-carro.php?id=" . $row['id'] . "' class='btn btn-danger'>Excluir</a></td>";
                     echo "</tr>";
                 }
             } else {
@@ -80,7 +80,7 @@
     </table>
 </div>
 
-<a href="adc-veiculos.php">
+<a href="../paginas/adc-veiculos.php">
     <button type="submit" class="btn btn-warning" > Voltar </button>
 </a>
 </body>

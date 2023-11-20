@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles_cadastro.css">
+    <link rel="stylesheet" href="../CSS/styles_cadastro.css">
     <title>Cadastrar-se</title>
 	<style>
 		body {
@@ -54,11 +54,8 @@
     </style>
 </head>
 <body>
-    <form action="registroBD.php" method="post" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;"> 
-	<img src="logoSiteSmall.png" alt="Logo" style="position: absolute; top: 650px; left: calc(50% - 195px); width: 400px; height: 80px;">
-        
-
-        
+    <form action="../paginas/registroBD.php" method="post" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;"> 
+	<img src="../img/logoSiteSmall.png" alt="Logo" style="position: absolute; top: 650px; left: calc(50% - 195px); width: 400px; height: 80px;">
 		<h2>cadastro</h2>
 
         <label for="nome">Seu nome</label>  
@@ -77,19 +74,16 @@
 			<input type="checkbox" name="termos" style="margin-right: 
 			0px; width: 20px; margin-top: 10px; height: 14px;"> 
 			Aceita nossos 
-			<a href="pagina_termos.html">termos e serviços</a> e nossa <a href="politica_privacidade.html">política de privacidade</a> ?
+			<a href="../paginas/pagina_termos.html">termos e serviços</a> e nossa <a href="../paginas/politica_privacidade.html">política de privacidade</a> ?
 		</div>
 		
-		 
-
 		<div style="margin-left: 25px; margin-right: 20px; margin-top: 20px;">
-
         <input type="submit" value="confirmar">
     </form>
 
     <footer>
 		<label>@2023 Rent Mobility</label>
-
 	</footer>
 </body>
+
 </html>

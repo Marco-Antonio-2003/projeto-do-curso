@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Rent Mobility</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../CSS/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -37,28 +37,29 @@
   </style>
 
 </head>
+
 <header>
   <div class="col-3">
-    <img src="logoSiteSmall.png" style="border-radius: 20px; width: 360px;">
+    <img src="../img/logoSiteSmall.png" style="border-radius: 20px; width: 360px;">
   </div>
   <div class="col-9 row justify-content-end">
     <div class="col-2">
       <div class="btn_header">
-        <a href="login.html">
+        <a href="../paginas/login.html">
           <button class="btnLogin-popup"> Produtos </button>
         </a>
       </div>
     </div>
     <div class="col-2">
       <div class="btn_header">
-        <a href="login.html">
+        <a href="../paginas/login.html">
           <button class="btnLogin-popup"> Entrar </button>
         </a>
       </div>
     </div>
     <div class="col-2">
       <div class="login">
-        <a href="login.html">
+        <a href="../paginas/login.html">
           <button class="btnLogin-popup"> Conta </button>
         </a>
       </div>
@@ -66,18 +67,20 @@
   </div>
 </header>
 
-<body style="background-image: url('pexels-aleksandar-pasaric-4512439.jpg');background-repeat: no-repeat;
+
+<body style="background-image: url('../img/pexels-aleksandar-pasaric-4512439.jpg');background-repeat: no-repeat;
 background-attachment: fixed;
 background-size: cover;">
+
     <!-- imagem creditada a aleksandar pasaric -->
 <br>
-<form action="conexao_alugar.php" method="post">
+<form action="../paginas/conexao_alugar.php" method="post">
   <div class="container  justify-content-center">
     <div class="row  justify-content-center" style="color: white;">
       <div class="row  justify-content-center" style="color: white;">
       <h1 style="width:50%">Informações do Cliente</h1>
       </div>
-      <form style="width:80%" method="post" action="cadastrar-usuario.php">
+      <form style="width:80%" method="post" action="../paginas/cadastrar-usuario.php">
 
         <div class="row">
           <div class="col-6">
@@ -170,10 +173,12 @@ background-size: cover;">
           </div>
         </div>    
         <div class="row justify-content-end">
-          <a href="conexao_alugar.php">
+          <a href="../paginas/conexao_alugar.php">
             <button style="margin-left: 790px; width: 120px;" type="submit">Salvar</button>
           </a>
           <input type="hidden" name="idVeiculo" value="ID_DO_VEICULO">
+    </div>
+</form>
 
 
     </div>

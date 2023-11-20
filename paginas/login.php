@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_login.css">
+    <link rel="stylesheet" href="../CSS/style_login.css">
     <title>Login</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -67,12 +67,10 @@
 		}
 	</style>
 </head>
+
 <body>
-
-	<form style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;" id="form_login" action="loginBD.php" method="POST">
-		<img src="logoSiteSmall.png" alt="Logo" style="position: absolute; top: 600px; left: calc(50% - 195px); width: 400px; height: 80px;">
-		
-
+	<form style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;" id="form_login" action="../paginas/loginBD.php" method="POST">
+		<img src="../img/logoSiteSmall.png" alt="Logo" style="position: absolute; top: 600px; left: calc(50% - 195px); width: 400px; height: 80px;">
 		<h1>Fazer Login</h1>
 		<label for="login">Login: :</label>
 		<input  type="text" id="email" name="login" required>
@@ -81,36 +79,19 @@
 		<div style="margin-left: 25px; margin-right: 20px; margin-top: 15px; justify-content: center;">
         <input type="submit" id="submeter" value="Entrar com email" class="btn btn-success"/>
 		</div>
-	
-		<div style="width: 20px; margin-top: 5px;">
-			
-		</div>
-	 
+		<div style="width: 20px; margin-top: 5px;"></div>
 		<div style="margin-left: 25px; margin-right: 20px; margin-top: 20px;">
 			<label> Ainda não tem conta ? </label>
-			<a href="registro.php">
+			<a href="../paginas/registro.php">
 				<button style="border-radius: 7px;" type="button" class="btn btn-primary">Cadastrar-se</button>
 			</a>
-			
 		</div>
-
-
-		<!--
-		<p style="position: absolute; top: 540px;">Entre com sua conta do Google</p>
-		<button style="position: absolute; top: 590px;" class="login-google" onclick="loginWithGoogle()">Cadastrar-se com o Google</button>
-
-		-->
-
 	</form>
-
-
-
 	<footer style="font-style: italic;">
 		<label>ler nossos</label>
-		<a href="pagina_termos.html">termos e serviços</a> e nossa <a href="politica_privacidade.html">política de privacidade</a>
-		<p>&copy; 2023 Rent Mobility</p>
+		<a href="../paginas/pagina_termos.html">termos e serviços</a> e nossa <a href="../paginas/politica_privacidade.html">política de privacidade</a>
+		<p>© 2023 Rent Mobility</p>
 	</footer>
-      
-      
 </body>
+
 </html>
