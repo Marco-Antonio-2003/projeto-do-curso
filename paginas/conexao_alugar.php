@@ -1,24 +1,34 @@
-<?php
-require_once 'classes/Veiculos.php';
+<?php 
+// Conectar ao banco de dados (substitua os valores conforme necessário)
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "alugue";
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Obter dados do formulário
-    $idVeiculo = $_POST['idVeiculo'];
-    // Obter outros dados do cliente e método de pagamento
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-    // Instanciar a classe Veiculos
-    $veiculo = new Veiculos();
-
-    try {
-        // Atualizar status para "alugado" no banco de dados
-        $veiculo->alugarVeiculo($idVeiculo);
-
-        echo "Carro alugado com sucesso!";
-    } catch (Exception $e) {
-        echo "Erro ao processar o aluguel: " . $e->getMessage();
-    }
-} else {
-    echo "Método inválido para processar o aluguel.";
+// Verificar a conexão
+if ($conn->connect_error) {
+    die("Erro na conexão com o banco de dados: " . $conn->connect_error);
 }
-include("index.php");
+
+// Verificar se 'id' está definido e é um número
+if (isset($_POST['id']) && is_numeric($_POST['id'])) {
+    // ID do carro que foi alugado
+    $id_carro_alugado = $_POST['id'];
+  
+    // Atualizar o valor de 'alugado' para 1
+    $sql = "UPDATE tb_adicionar_carro SET alugado = 1 WHERE id = $id_carro_alugado";
+  
+    if ($conn->query($sql) === TRUE) {
+      echo "Registro atualizado com sucesso";
+    } else {
+      echo "Erro ao atualizar registro: " . $conn->error;
+    }
+  } else {
+    echo "ID inválido";
+  }
+  
+  $conn->close();
+  include("index.php");
 ?>

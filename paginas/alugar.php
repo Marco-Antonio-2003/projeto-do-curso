@@ -75,6 +75,7 @@ background-size: cover;">
     <!-- imagem creditada a aleksandar pasaric -->
 <br>
 <form action="../paginas/conexao_alugar.php" method="post">
+  <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
   <div class="container  justify-content-center">
     <div class="row  justify-content-center" style="color: white;">
       <div class="row  justify-content-center" style="color: white;">
@@ -173,12 +174,18 @@ background-size: cover;">
           </div>
         </div>    
         <div class="row justify-content-end">
-          <a href="../paginas/conexao_alugar.php">
-            <button style="margin-left: 790px; width: 120px;" type="submit">Salvar</button>
-          </a>
-          <input type="hidden" name="idVeiculo" value="ID_DO_VEICULO">
+        <form action="../paginas/conexao_alugar.php" method="get">
+            
+            <button style="margin-left: 790px; width: 120px;" type="submit">Alugar</button>
+        </form>
+
     </div>
 </form>
+
+
+    </div>
+</form>
+
 
 
     </div>
