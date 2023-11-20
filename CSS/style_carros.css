@@ -1,0 +1,178 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	
+}
+
+body {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	background-color: white;
+	color: black;
+	
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+	background-color: #302f52;
+	color: white;
+}
+
+.logo h1 {
+	font-size: 32px;
+	margin-right: 300px;
+	color: white;
+	margin-left: 180px;
+	
+}h1{
+	color: white;
+}
+ul{
+	color: white;
+}
+li{
+	color: white;
+}
+p,label{
+	color: white;
+}
+.login a {
+	display: inline-block;
+	padding: 12px 30px;
+	background-color: #4CAF50;
+	color: black;
+	border-radius: 5px;
+	text-decoration: none;
+	margin-left: 300px;
+}
+
+main {
+	padding: 40px;
+}
+
+footer {
+	
+	background-color: #302f52;
+	color: whiblate;
+	text-align: center;
+	padding: 20px;
+	font-family: 'Quicksand', sans-serif;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;	
+	top: 750px;
+}
+
+button {
+	background-color: #4CAF50; /* cor verde */
+	border: none;
+	color: white;
+	padding: 9px 16px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 9px 1px;
+	cursor: pointer;
+	border-radius: 9px;
+  }
+
+.text{
+	margin-left: 650px;
+}
+
+.text-esp{
+	float: right;
+	color: white;
+	margin-right: 200px;
+	margin-top: -330px;
+}
+
+.esp{
+	text-align: center;
+	color: white;
+	margin-right: 300px;
+	margin-top: -330px;	
+}
+
+.car-img-move{
+	padding: 50px;
+	width: 70%;
+	
+}
+
+.btn-primary{
+	background-color: #807cf3;
+	border: none;
+	color: black;
+	padding: 12px 16px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 9px 1px;
+	cursor: pointer;
+	border-radius: 9px;
+	margin-top: 300px;
+	
+}
+
+.text-duv{
+	color: black;
+	margin-top: 280px;
+	
+	font-size: 120%;
+}
+
+#chat-container {
+	position: fixed;
+	bottom: 0;
+	right: 20px;
+	width: 300px;
+	height: 400px;
+	border: 1px solid #ccc;
+	border-radius: 5px 5px 0 0;
+	background-color: #fff;
+	z-index: 9999;
+  }
+  
+  #chat-messages {
+	height: 320px;
+	overflow-y: scroll;
+  }
+  
+  #chat-form {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+  }
+  
+  #chat-input {
+	flex-grow: 1;
+	margin-right: 10px;
+  }
+  
+  #ver-mais-btn {
+    transition: transform 0.3s;
+}
+
+#ver-mais-btn:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.car-info {
+	position: relative;
+  }
+  
+ .cartao {
+	margin-top: 7px;
+	
+ }

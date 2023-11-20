@@ -1,0 +1,105 @@
+input[type="submit"] {
+    width: 150px; /* Defina a largura que desejar */
+    margin-right: 10px; /* Espaço entre os botões */
+
+  }
+
+form {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin: 50px auto;
+    max-width: 700px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+input[type="nome"] {
+    display: flex;
+    margin: 10px 9px;
+    width: 140px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+} 
+
+input[type="sobrenome"] {
+    display: flex;
+    margin: 10px 0px;
+    width: 140px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sobre {
+ margin-left: 180px;
+}
+.container {
+    display: flex;
+    flex-direction: row; /* define a direção dos elementos na linha */
+    flex-wrap: nowrap; /* evita que os elementos sejam quebrados em outra linha */
+    
+  }
+  
+  .box {
+    width: 50%; /* define a largura de cada caixa como 50% */
+    box-sizing: border-box; /* inclui a largura da borda e do padding no cálculo da largura */
+    border: 1px solid black; /* adiciona uma borda preta para cada caixa */
+    padding: 10px; /* adiciona um espaço interno de 10px para cada caixa */
+    margin-left: 10px;
+    display: block;
+    margin: 10px 0px;
+    width: 140px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+
+  }
+
+  input[type=checkbox] {
+    position: relative;
+    cursor: pointer;
+    
+}
+input[type=checkbox]:before {
+    
+    display: flex;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+    border: 2px solid #555555;
+    border-radius: 3px;
+    background-color: white;
+}
+
+footer {
+	background-color: #cac9c9;
+	color: #0a0a0a;
+	text-align: center;
+	padding: 30px;
+  border-radius: 20px;
+  margin-top: 300px;
+  height: 90px;
+  font-style: italic;
+  
+}
+
+.login-google {
+  background-color: #4285F4;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-google:hover {
+  background-color: #3470D8;
+}
+

@@ -1,0 +1,409 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	
+}
+
+body {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	background-color: white;
+	
+}
+
+header {
+	display: flex;
+	align-items: center;
+	padding: 20px;
+	background-color: #302f52;
+	color: white;
+}
+
+.logo h1 {
+	font-size: 32px;
+	margin-right: 300px;
+}
+
+.login a {
+	position: relative;
+	font-size: 1.1em;
+	color: #4CAF50;
+	text-decoration: none;
+	font-weight: 500;
+	margin-left: 40px;
+}
+
+.login a::after {
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -6px;
+	width: 100%;
+	height: 3px;
+	border-radius: 5px;
+}
+
+.login .btnLogin-popup {
+	width: 130px;
+	height: 50px;
+	background: transparent;
+	border: 2px solid white;
+	outline: none;
+	border-radius: 6px;	
+	cursor: pointer;
+	font-size: 1.1em;
+	color: white;
+	font-weight: 500;
+	margin-left: 40px;
+
+}
+
+.login .btnLogin-popup:hover {
+	background-color: #4CAF50;
+	color: #162938;
+}
+
+
+
+main {
+	padding: 40px;
+}
+
+.location, .cars {
+	margin-bottom: 40px;
+	
+	
+}
+
+.cars li {
+	display: flex;
+	margin-right: 40px;
+	vertical-align: top;
+}
+
+.cars li:last-of-type {
+	margin-right: 0;
+}
+
+/*
+.cars h5 {
+	margin-bottom: 10px;
+}
+*/
+
+.cars img {
+	display: flex;
+	margin-bottom: 10px;
+	
+}
+
+
+.btn_header a {
+	position: relative;
+	font-size: 1.1em;
+	color: white;
+	text-decoration: none;
+	font-weight: 500;
+	margin-left: 40px;
+}
+
+.btn_header a::after {
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -6px;
+	width: 100%;
+	height: 3px;
+	border-radius: 5px;
+}
+
+.btn_header .btnLogin-popup {
+	width: 130px;
+	height: 50px;
+	background: transparent;
+	border: 2px solid white;
+	outline: none;
+	border-radius: 6px;	
+	cursor: none;
+	font-size: 1.1em;
+	color: #fff;
+	font-weight: 500;
+	margin-left: 40px;
+
+}
+
+.btn_header .btnLogin-popup:hover {
+	background-color: white;
+	color: #162938;
+}
+
+
+.car-container {
+    display: flex;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.car {
+	display: inline-flex;
+    border: 1px solid #ccc;
+    padding: 20px;
+	text-align: center;
+	
+    
+	
+}
+
+button {
+	background-color: #4CAF50; /* cor verde */
+	border: none;
+	color: white;
+	padding: 9px 16px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 9px 1px;
+	cursor: pointer;
+	border-radius: 9px;
+  }
+
+.cubo {
+	background-color: rgb(248, 248, 248);
+	color: darkgray;
+
+}
+
+footer {
+	background-color: #302f52;
+	color: white;
+	text-align: center;
+	padding: 20px;
+	font-family: 'Quicksand', sans-serif;
+}
+
+.car-price {
+	margin-left: -250px; 
+	display: inline-block;
+	margin-top: 10px;
+  }
+  
+  .car-price p {
+	text-align: left;
+  }
+  
+  .car-price img {
+	float: left;
+	margin-right: 10px; 
+	
+  }
+  
+.car_info {
+	margin-left: -270px;
+	display: inline-block;
+	margin-top: 20px;
+}
+
+  .car_info h5 {
+	text-align: left;
+  }
+
+  .car_info img {
+	float: left;
+	margin-left: 300px;
+  } 
+
+  .localizacao {
+	background-color: white;
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	
+	
+  }
+  
+  .caixa-pesquisa {
+	background-color: rgba(70, 52, 87, 0.61);
+	border-radius: 5px;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+	padding: 30px;
+	width: 100%;
+	max-width: 1000px;
+	color: white;
+  }
+  
+  .caixa-pesquisa form {
+
+	justify-content: center;
+  }
+  
+  .caixa-pesquisa label {
+	font-weight: bold;
+	margin-bottom: 5px;
+	
+  }
+  
+  .caixa-pesquisa input {
+	padding: 20px;
+	margin-bottom: 25px;
+	border-radius: 3px;
+	border: none;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+	height: 30px;
+  }
+  
+  .caixa-pesquisa button {
+	padding: 10px 20px;
+	background-color: #0077ff;
+	color: white;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: bold;
+	transition: all 0.3s ease;
+	
+  }
+
+  .location {
+	position: relative;
+	height: 500px;
+  }
+  
+  .background-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url('https://www.exemplo.com/imagem-de-fundo.jpg');
+	background-size: cover;
+	background-position: center;
+	opacity: 0.8;
+  }
+  
+.back_fam {
+	background-color: #1f1b2d;	
+	border-radius: 10px;
+	color: white;
+	
+	
+}
+
+.back_fam-esport {
+	background-color: #1f1b2d;
+	margin-top: 50px;
+	border-radius: 10px;
+	color: white;
+	height: 450px;
+}
+
+.label {
+	
+	padding: 20px -30px;
+
+	text-align: center;
+	text-indent: 10px;
+	
+}
+
+
+.loca_button {
+	padding: 0px 200px;
+}
+
+.img {
+	position: relative;
+	left: 30px;
+	top: 15px;
+	
+}
+
+.img-esp {
+	position: relative;
+	left: 120px;
+	top: 30px;
+	width: 700px;
+}
+
+.img-esp-m3{
+	position: relative;
+	left: 120px;
+	top: 20px;
+	width: 600px;
+	
+}
+
+.img-esp-tt{
+	position: relative;
+	left: 120px;
+	top: 20px;
+	width: 1000px;
+}
+
+.car_info-eps {
+	position: relative;
+	left: -10px;
+	top: 20px;
+}
+
+.car-price-eps{
+	position: relative;
+	left: -10px;
+	top: 25px;
+}
+
+.car-price-eps-m3 {
+	position: relative;
+	left: -10px;
+	top: -0px;
+}
+
+.img-car{
+	margin-left: 100px;
+}
+
+#ver-mais-btn {
+    transition: transform 0.3s;
+}
+
+#ver-mais-btn:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.label {
+	text-align: center;
+	padding: 10px;
+  }
+  
+  .localizacao {
+	background-color: transparent;
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+  }
+  
+  .caixa-pesquisa {
+	max-width: 800px;
+	margin: 0 auto;
+  }
+  
+  input[type="date"],
+  input[type="time"] {
+	padding: 5px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+  }
+   
+  .loca_button {
+	text-align: center;
+	margin-top: 10px;
+  }
+  

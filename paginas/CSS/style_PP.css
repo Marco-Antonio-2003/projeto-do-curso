@@ -1,0 +1,48 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	
+}
+
+body {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	background-color: #282435;
+	
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+	background-color: #302f52;
+	color: white;
+}
+
+.logo h1 {
+	font-size: 32px;
+	margin-right: 300px;
+	margin-top: 10px;
+	
+}
+
+.login a {
+	display: inline-block;
+	padding: 12px 30px;
+
+	background-color: #4CAF50;
+	color: white;
+	border-radius: 5px;
+	text-decoration: none;
+}
+
+main {
+	padding: 40px;
+}
+
+.text {
+	color: white;
+}

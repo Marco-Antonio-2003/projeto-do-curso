@@ -1,0 +1,31 @@
+input[type="submit"] {
+    width: 100px; /* Defina a largura que desejar */
+    margin-right: 10px; /* Espaço entre os botões */
+  }
+  
+  footer {
+    background-color: #cac9c9;
+    color: #0a0a0a;
+    text-align: center;
+    padding: 20px;
+    height: 90px;
+    margin-top: 397px;
+    border-radius: 20px;
+    
+  }
+
+  .login-google {
+    background-color: #4285F4;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .login-google:hover {
+    background-color: #3470D8;
+  }
+  
