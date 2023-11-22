@@ -80,6 +80,29 @@ class Usuarios{
         return $lista;
     }
 
+    public function inserirNovoUsuario($nome, $sobrenome, $cpf, $nascimento, $rua, $bairro, $cep) {
+        $conexao = Conexaobd::pegarConexao();
+
+        // Prepare a query
+        $query = "INSERT INTO tb_usuarios (nome, sobrenome, cpf, nascimento, rua, bairro, cep) VALUES (:nome, :sobrenome, :cpf, :nascimento, :rua, :bairro, :cep)";
+
+        // Prepare a statement
+        $stmt = $conexao->prepare($query);
+
+        // Bind dos parâmetros
+        $stmt->bindParam(':nome', $nome);
+        $stmt->bindParam(':sobrenome', $sobrenome);
+        $stmt->bindParam(':cpf', $cpf);
+        $stmt->bindParam(':nascimento', $nascimento);
+        $stmt->bindParam(':rua', $rua);
+        $stmt->bindParam(':bairro', $bairro);
+        $stmt->bindParam(':cep', $cep);
+
+        // Execute a query
+        $stmt->execute();
+    }
+
 }
+
 
 ?>

@@ -29,7 +29,13 @@ if ($resultado->num_rows > 0) {
 <head>
     <title>Alterar Usuário</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/style.css">
 </head>
+    <header>
+		<div class="col-3">
+			<a href="index.php"><img src="../img/logoSiteSmall.png" style="border-radius: 20px; width: 360px;"></a>
+		</div>
+	</header>
 <body>
     <div class="container">
         <h2>Alterar Usuário</h2>
@@ -75,7 +81,7 @@ if ($resultado->num_rows > 0) {
          
             <button type="submit" class="btn btn-primary">Alterar</button>
         </form>
-        <br>
+        
         <a href="gerenciar-usu.php">
                 <button type="submit" class="btn btn-secondary">Voltar</button>
             </a>

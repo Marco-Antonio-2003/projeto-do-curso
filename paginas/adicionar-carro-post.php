@@ -27,12 +27,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $foto = $_POST['foto'];
     $ar = $_POST['ar'];
     $abs = $_POST['abs'];
+    $preco = $_POST['preco'];
 
     // Inserir os dados no banco de dados
-    $sql = "INSERT INTO tb_adicionar_carro (nome, marca, modelo, ano, motorizacao, combustivel, direcao, cambio, portas, foto, ar, abs) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO tb_adicionar_carro (nome, marca, modelo, ano, motorizacao, combustivel, direcao, cambio, portas, foto, ar, abs,preco) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
 
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssssssssssss", $nome, $marca, $modelo, $ano, $motorizacao, $combustivel, $direcao, $cambio, $portas, $foto, $ar, $abs);
+    $stmt->bind_param("sssssssssssss", $nome, $marca, $modelo, $ano, $motorizacao, $combustivel, $direcao, $cambio, $portas, $foto, $ar, $abs,$preco);
 
     if ($stmt->execute()) {
         echo "Veículo adicionado com sucesso!";

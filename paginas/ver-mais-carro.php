@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Carros</title>
+    <!-- Adicione a referência ao Bootstrap 4 CSS -->
     <link rel="stylesheet" href="../CSS/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -32,6 +33,7 @@
         
     </style>
 </head>
+</head>
 <header>
         <div class="col-3">
 			<a href="index.php"><img src="../img/logoSiteSmall.png" style="border-radius: 20px; width: 360px;"></a>
@@ -50,13 +52,12 @@
 background-attachment: fixed;
 background-size: cover;">
 
-<br>
-
-<div class="container">
-    <h2 style="color: white;">Lista de Carros</h2>
-    
-    <table class="table">
-        <thead class="thead-light">
+<main role="main" class="flex-shrink-0">
+    <div class="container text-center">
+        <h2 style="color: #b0b0b0;">Lista de Carros</h2>
+        
+        <table class="table" style="border-radius: 10px solid #b0b0b0;">
+        <thead>
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
@@ -71,31 +72,32 @@ background-size: cover;">
                 <th>Foto</th>
                 <th>Ar Condicionado</th>
                 <th>ABS</th>
+                <th>Preço</th>
                 <th>Ação</th>
             </tr>
         </thead>
         <tbody>
             <?php
-            // Conectar ao banco de dados (substitua os valores conforme necessário)
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "alugue";
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $dbname = "alugue";
+    
+                $conn = new mysqli($servername, $username, $password, $dbname);
+    
+                // Verificar a conexão
+                if ($conn->connect_error) {
+                    die("Erro na conexão com o banco de dados: " . $conn->connect_error);
+                }
+    
+                // Selecionar os dados da tabela
+                $sql = "SELECT * FROM tb_adicionar_carro";
+                $result = $conn->query($sql);
+    
+                if ($result->num_rows > 0) {
+                    // Exibir os dados em uma tabela
+                    while ($row = $result->fetch_assoc()) {
 
-            $conn = new mysqli($servername, $username, $password, $dbname);
-
-            // Verificar a conexão
-            if ($conn->connect_error) {
-                die("Erro na conexão com o banco de dados: " . $conn->connect_error);
-            }
-
-            // Selecionar os dados da tabela
-            $sql = "SELECT * FROM tb_adicionar_carro";
-            $result = $conn->query($sql);
-
-            if ($result->num_rows > 0) {
-                // Exibir os dados em uma tabela
-                while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
                     echo "<td>" . $row['id'] . "</td>";
                     echo "<td>" . $row['nome'] . "</td>";
@@ -110,25 +112,24 @@ background-size: cover;">
                     echo "<td><img src='../img/" . $row['foto'] . "' alt='Foto do Carro' style='max-width: 100px;'></td>";
                     echo "<td>" . ($row['ar'] == 1 ? 'Sim' : 'Não') . "</td>";
                     echo "<td>" . ($row['abs'] == 1 ? 'Sim' : 'Não') . "</td>";
-                    echo "<td><a href='../paginas/excluir-carro.php?id=" . $row['id'] . "' class='btn btn-danger'>Excluir</a></td>";
+                    echo "<td>" . $row['preco'] . "</td>";
+                    echo "<td><a href='../paginas/detalhes.php?id=" . $row['id'] . "' class='btn btn-info'>Alugar</a></td>";
                     echo "</tr>";
                 }
             } else {
                 echo "<tr><td colspan='14'>Nenhum carro encontrado.</td></tr>";
             }
 
-            // Fechar a conexão com o banco de dados
             $conn->close();
             ?>
         </tbody>
-    </table>
-</div>
+        </table>
+    </div>
+</main>
 
-
-<!-- Add Bootstrap JS and Popper.js scripts -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 </body>
 </html>

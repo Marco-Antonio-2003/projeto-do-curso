@@ -12,30 +12,23 @@ if ($conn->connect_error) {
     die("Erro na conexão com o banco de dados: " . $conn->connect_error);
 }
 
-// Verificar se o formulário foi enviado
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Obter os dados do formulário
-    $nome = $_POST['nome'];
-    $sobrenome = $_POST['sobrenome'];
-    $cpf = $_POST['CPF'];
-    $nascimento = $_POST['nascimento'];
-    $rua = $_POST['rua'];
-    $bairro = $_POST['bairro'];
-    $cep = $_POST['cep'];
+// Prepara e vincula
+$stmt = $conn->prepare("INSERT INTO tb_usuarios (nome, sobrenome, CPF, nascimento, rua, bairro, cep) VALUES (?, ?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("sssssss", $nome, $sobrenome, $CPF, $nascimento, $rua, $bairro, $cep);
 
-    // Preparar e executar a instrução SQL para inserir os dados na tabela
-    $stmt = $conn->prepare("INSERT INTO tb_usuarios (nome, sobrenome, cpf, nascimento, rua, bairro, cep) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssssss", $nome, $sobrenome, $cpf, $nascimento, $rua, $bairro, $cep);
+// Define os parâmetros e executa
+$nome = $_POST['nome'];
+$sobrenome = $_POST['sobrenome'];
+$CPF = $_POST['CPF'];
+$nascimento = $_POST['nascimento'];
+$rua = $_POST['rua'];
+$bairro = $_POST['bairro'];
+$cep = $_POST['cep'];
+$stmt->execute();
 
-    if ($stmt->execute()) {
-        echo "Usuário cadastrado com sucesso!";
-    } else {
-        echo "Erro ao cadastrar usuário: " . $stmt->error;
-    }
+echo "Novo registro criado com sucesso";
 
-    // Fechar a instrução e a conexão com o banco de dados
-    $stmt->close();
-    $conn->close();
-}
-include("alugar.php");
+$stmt->close();
+$conn->close();
+
 ?>

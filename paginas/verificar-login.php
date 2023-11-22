@@ -14,6 +14,6 @@ if ($_SESSION['tipo'] != 'admin') {
   // Se o usuário não for um adm, redirecione para a página de usuario
   // Se o usuário não for um adm, exibe um alerta
   echo "<script>alert('Você não tem permissão de administrador para realizar esta ação.');</script>";
-  include("index.php");
+  header('Location: index.php');
 }
 ?>

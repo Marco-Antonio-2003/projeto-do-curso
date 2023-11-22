@@ -39,32 +39,9 @@
 </head>
 
 <header>
-  <div class="col-3">
-    <img src="../img/logoSiteSmall.png" style="border-radius: 20px; width: 360px;">
-  </div>
-  <div class="col-9 row justify-content-end">
-    <div class="col-2">
-      <div class="btn_header">
-        <a href="../paginas/login.html">
-          <button class="btnLogin-popup"> Produtos </button>
-        </a>
-      </div>
-    </div>
-    <div class="col-2">
-      <div class="btn_header">
-        <a href="../paginas/login.html">
-          <button class="btnLogin-popup"> Entrar </button>
-        </a>
-      </div>
-    </div>
-    <div class="col-2">
-      <div class="login">
-        <a href="../paginas/login.html">
-          <button class="btnLogin-popup"> Conta </button>
-        </a>
-      </div>
-    </div>
-  </div>
+    <div class="col-3">
+			<a href="index.php"><img src="../img/logoSiteSmall.png" style="border-radius: 20px; width: 360px;"></a>
+		</div>
 </header>
 
 
@@ -82,7 +59,6 @@ background-size: cover;">
       <h1 style="width:50%">Informações do Cliente</h1>
       </div>
       <form style="width:80%" method="post" action="../paginas/cadastrar-usuario.php">
-
         <div class="row">
           <div class="col-6">
             <div class="col">
@@ -180,7 +156,7 @@ background-size: cover;">
         </form>
 
     </div>
-</form>
+      </from>
 
 
     </div>
@@ -189,30 +165,13 @@ background-size: cover;">
 
 
     </div>
-</form>  
+  
   </div>
   <div>
     </div>
-    </form>
   </div>
   <div style=" padding-top:100px ;"></div>
-  <footer style="font-style: italic;color:white ">
-    <p style="font-style: italic;color:white ">Sobre nossa empresa: Alugar um carro da Rent Mobility em Sorocaba pode
-      ser uma ótima opção para quem busca
-      liberdade e praticidade durante a viagem.</p>
-    <p style="font-style: italic;color:white "> Com uma frota de veículos bem cuidada e diversificada, é possível
-      escolher o carro que melhor atende às suas
-      necessidades. </p>
-    <p style="font-style: italic;color:white ">Além disso, a Rent Mobility oferece preços competitivos e um serviço de
-      atendimento ao cliente de qualidade,
-    </p>
-    <p style="font-style: italic;color:white ">garantindo uma experiência satisfatória ao alugar um carro em Sorocaba.
-    </p>
 
-    <a style="color: rgb(96, 96, 253);" href="pagina_termos.html">termos e serviços</a> <br> <a
-      style="color: rgb(96, 96, 253);" href="politica_privacidade.html">política de privacidade</a>
-    <p>&copy; 2023 Rent Mobility</p>
-  </footer>
   <script>
     function mostrarCamposCartao() {
       var pagamentoSelect = document.getElementById("pagamento");
@@ -224,6 +183,7 @@ background-size: cover;">
         camposCartaoDiv.style.display = "none";
       }
     }
+    
   </script>
 
 

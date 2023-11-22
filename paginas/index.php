@@ -40,21 +40,21 @@
         <div class="col-2">
             <div class="btn_header">
                 <a href="../paginas/adc-veiculos.php">
-                    <button class="btnLogin-popup"> Gerenciar Veículos </button>
+                    Gerenciar Veículos 
                 </a>
             </div>
         </div>
         <div class="col-2">
             <div class="btn_header">
                 <a href="../paginas/gerenciar-usu.php">
-                    <button class="btnLogin-popup"> Gerenciar clientes </button>
+                   Gerenciar clientes 
                 </a>
             </div>
         </div>
         <div class="col-2">
             <div class="btn_header">
-                <a href="../paginas/login.php">
-                    <button class="btnLogin-popup"> Produtos </button>
+                <a href="../paginas/ver-mais-carro.php">
+                     Ver mais carros
                 </a>
             </div>
         </div>
@@ -65,13 +65,7 @@
                 </a>
             </div>
         </div>
-        <div class="col-2">
-            <div class="login">
-                <a href="../paginas/login.php">
-                    <button class="btnLogin-popup"> Conta </button>
-                </a>
-            </div>
-        </div>
+        
     </div>
 </header>
 <br>
@@ -81,7 +75,6 @@
 <body style="background-image: url('../img/pexels-aleksandar-pasaric-4512439.jpg');background-repeat: no-repeat;
 background-attachment: fixed;
 background-size: cover;">
-    <!-- imagem creditada a aleksandar pasaric -->
     <h2 style="color: white; margin-left: 725px;">Horário de serviço: 7:30 até as 22:30</h2>
     <script src="../paginas/script3.js"></script>
     <div class="container">
@@ -89,26 +82,16 @@ background-size: cover;">
             <div class="caixa-pesquisa">
                 <form>
                     <div class="row">
-                        <div class="col-8">
-                            <input type="text" id="retirada" placeholder="Pesquisar Carro"
-                                style="width: 100%;height: 40px;" name="retirada">
-                        </div>
+                       
                         <div class="col-4">
-                            <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                style="width: 100%;background-color: white;color: grey;"
-                                aria-expanded="false">Marcas</button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
+       
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-6">
                             <div class="row">
                                 <div class="col-1">
-                                    <p>de</p>
+                                    <strong>de</strong>
                                 </div>
                                 <div class="row col-11 ">
                                     <div class="col-7">
@@ -126,7 +109,7 @@ background-size: cover;">
                         <div class="col-6">
                             <div class="row">
                                 <div class="col-1">
-                                    <p>Ate</p>
+                                    <strong>Até</strong>
                                 </div>
                                 <div class="col-11">
                                     <div class="row ">
@@ -171,7 +154,7 @@ background-size: cover;">
 
                                 <div class="car-price">
                                     <p>Diária: R$ 100,98</p>
-                                    <p>Semana: R$ 500,98</p>
+                                    
                                     <a href="../paginas/detalhes.php?id=1">
                                         <button id="ver-mais-btn">Ver mais sobre</button>
                                     </a>
@@ -188,7 +171,7 @@ background-size: cover;">
                                 <img style="border-radius: 5px;" src="../img/onix2019.jpg" alt="Onix">
                                 <div class="car-price">
                                     <p>Diária: R$ 120,99</p>
-                                    <p>Semana: R$ 600,95</p>
+                                    
                                     <a href="../paginas/detalhes.php?id=5">
                                         <button id="ver-mais-btn">Ver mais sobre</button>
                                     </a>
@@ -205,7 +188,7 @@ background-size: cover;">
                                 <img style="border-radius: 5px;" src="../img/fusionflex_capa_620x350.jpg" alt="Fusion">
                                 <div class="car-price">
                                     <p>Diária: R$ 140,99</p>
-                                    <p>Semana: R$ 650,99</p>
+                             
                                     <a href="../paginas/detalhes.php?id=6">
                                         <button id="ver-mais-btn">Ver mais sobre</button>
                                     </a>
@@ -236,7 +219,7 @@ background-size: cover;">
 
                     <div class="car-price">
                         <p>Diária: R$ 230,99</p>
-                        <p>Semana: R$ 1459,99</p>
+                       
                         <a href="../paginas/detalhes.php?id=7">
                             <button id="ver-mais-btn">Ver mais sobre</button>
                         </a>
@@ -246,13 +229,13 @@ background-size: cover;">
 
                 <li>
                     <div class="car_info">
-                        <h4>Chevrolet Onix 2019</h4>
+                        <h4>BMW M3</h4>
                         <h5>1.0 com 3 cilindros turbo</h5>
                     </div>
                     <img style="border-radius: 5px;" src="../img/M3_2019.jpg" alt="M3_2019">
                     <div class="car-price">
-                        <p>Diária: R$ 120,99</p>
-                        <p>Semana: R$ 600,95</p>
+                        <p>Diária: R$ 245,45</p>
+                       
                         <a href="../paginas/detalhes.php?id=8">
                             <button id="ver-mais-btn">Ver mais sobre</button>
                         </a>
@@ -262,14 +245,14 @@ background-size: cover;">
 
                 <li>
                     <div class="car_info">
-                        <h4>Ford Fusion 2017</h4>
+                        <h4>AUDI TT rs </h4>
                         <h5>Flex motor EcoBoost 2.0</h5>
                     </div>
 
-                    <img style="border-radius: 5px;" src="../img/audi_TT_rs.jfif" alt="Audi">
+                    <img style="border-radius: 5px;" src="../img/audi-tt-rs-2022-7.jpg" alt="Audi">
                     <div class="car-price">
-                        <p>Diária: R$ 140,99</p>
-                        <p>Semana: R$ 650,99</p>
+                        <p>Diária: R$ 270,50</p>
+                       
                         <a href="../paginas/detalhes.php?id=9">
                             <button id="ver-mais-btn">Ver mais sobre</button>
                         </a>

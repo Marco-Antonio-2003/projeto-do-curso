@@ -65,6 +65,10 @@
                 <option value="0">Não</option>
             </select>
         </div>
+        <div class="form-group">
+            <label for="preco">Preço:</label>
+            <input type="text" name="preco" class="form-control" placeholder="Preço em decimal" required>
+        </div>
         <button type="submit" class="btn btn-primary">Adicionar Veículo</button>
         
     </form>
