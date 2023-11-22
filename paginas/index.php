@@ -76,7 +76,8 @@
 background-attachment: fixed;
 background-size: cover;">
     <h2 style="color: white; margin-left: 725px;">Horário de serviço: 7:30 até as 22:30</h2>
-    <script src="../paginas/script3.js"></script>
+    <!--
+<script src="../paginas/script3.js"></script>
     <div class="container">
         <div class="localizacao">
             <div class="caixa-pesquisa">
@@ -132,6 +133,10 @@ background-size: cover;">
         <br>
 
 
+
+
+    -->
+    
 
         <div>
         <main>
