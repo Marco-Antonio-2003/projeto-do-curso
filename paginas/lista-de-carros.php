@@ -36,15 +36,6 @@
         <div class="col-3">
 			<a href="index.php"><img src="../img/logoSiteSmall.png" style="border-radius: 20px; width: 360px;"></a>
 		</div>
-        <div class="col-2">
-            <div class="btn_header">
-                <a href="../paginas/login.php">
-                    <button class="btnLogin-popup"> Entrar </button>
-                </a>
-            </div>
-        </div>
-        
-    </div>
 </header>
 <body style="background-image: url('../img/pexels-aleksandar-pasaric-4512439.jpg');background-repeat: no-repeat;
 background-attachment: fixed;

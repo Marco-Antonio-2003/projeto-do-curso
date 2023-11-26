@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Veículo</title>
+    <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
+<header>
+        <div class="col-3">
+			<a href="index.php"><img src="../img/logoSiteSmall.png" style="border-radius: 20px; width: 360px;"></a>
+		</div>
+</header>
 <body>
 
 <div class="container">
@@ -73,9 +79,7 @@
         
     </form>
 </div>
-<a href="adc-veiculos.php">
-    <button type="submit" class="btn btn-warning" > Voltar </button>
-</a>
+
 
 </body>
 </html>
