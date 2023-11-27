@@ -11,7 +11,6 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <style>
-        
         .cars li {
             display: inline-block;
             width: 30%;
@@ -20,16 +19,13 @@
             text-align: center;
 
         }
-
         .cars li:last-child {
             margin-right: 0;
         }
-
         .cars li img {
             max-width: 50%;
             height: auto;
         }
-        
     </style>
 </head>
 <header>
