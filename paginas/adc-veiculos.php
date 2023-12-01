@@ -7,6 +7,7 @@ $lista = $categoria->listarStatusAlugado();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,40 +17,46 @@ $lista = $categoria->listarStatusAlugado();
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
     <style>
-		.cars li {
-			display: inline-block;
-			width: 30%;
-			margin-right: 4%;
-			vertical-align: top;
-			text-align: center;
-		}
+    .cars li {
+        display: inline-block;
+        width: 30%;
+        margin-right: 4%;
+        vertical-align: top;
+        text-align: center;
+    }
 
-		.cars li:last-child {
-			margin-right: 0;
-		}
+    .cars li:last-child {
+        margin-right: 0;
+    }
 
-		.cars li img {
-			max-width: 50%;
-			height: auto;
-		}
+    .cars li img {
+        max-width: 50%;
+        height: auto;
+    }
 
-        h1 {
-            color: white;
-        }
-	</style>
+    h1 {
+        color: white;
+    }
+    </style>
 </head>
+
 <body>
     <header>
-		<div class="col-3">
-			<a href="index.php"><img src="../img/logoSiteSmall.png" style="border-radius: 20px; width: 360px;"></a>
-		</div>
-	</header>
+        <div class="col-3">
+            <a href="index.php"><img src="../img/logoSiteSmall.png" style="border-radius: 20px; width: 360px;"></a>
+        </div>
+    </header>
     <div class="container">
-        <u><h3>LISTA DE VEICULOS ALUGADOS</h3></u>
+        <u>
+            <h3>LISTA DE VEICULOS ALUGADOS</h3>
+        </u>
         <br><br>
         <h3>Abrir a lista de carros adicionados</h3>
-        <a href="lista-de-carros.php" class="btn btn-warning">Lista de carros</a>
-        <table class="table">
+        <a href="lista-de-carros.php" style="margin:10px" class="btn btn-warning">Lista de carros</a>
+        <div class="input-group">
+            <input class="form-control" id="myInput" type="text" placeholder="pesquisar">
+        </div>
+        <table style="margin:10px" class="table">
             <thead class="thead-light">
                 <tr>
                     <th>ID</th>
@@ -68,30 +75,30 @@ $lista = $categoria->listarStatusAlugado();
                     <th>Alugado</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="myTable">
                 <?php foreach ($lista as $linha) { ?>
-                    <tr>
-                        <td><?php echo $linha['id']; ?></td>
-                        <td><?php echo $linha['nome']; ?></td>
-                        <td><?php echo $linha['marca'];?></td>
-                        <td><?php echo $linha['modelo'];?></td>
-                        <td><?php echo $linha['ano'];?></td>
-                        <td><?php echo $linha['motorizacao'];?></td>
-                        <td><?php echo $linha['combustivel'];?></td>
-                        <td><?php echo $linha['direcao'];?></td>
-                        <td><?php echo $linha['cambio'];?></td>
-                        <td><?php echo $linha['portas'];?></td>
-                        <td><?php echo $linha['foto'];?></td>
-                        <td><?php echo $linha['ar'];?></td>
-                        <td><?php echo $linha['abs'];?></td>
-                        <td><?php echo $linha['alugado'];?></td>
-                        <td>
-                    </tr>
+                <tr>
+                    <td><?php echo $linha['id']; ?></td>
+                    <td><?php echo $linha['nome']; ?></td>
+                    <td><?php echo $linha['marca'];?></td>
+                    <td><?php echo $linha['modelo'];?></td>
+                    <td><?php echo $linha['ano'];?></td>
+                    <td><?php echo $linha['motorizacao'];?></td>
+                    <td><?php echo $linha['combustivel'];?></td>
+                    <td><?php echo $linha['direcao'];?></td>
+                    <td><?php echo $linha['cambio'];?></td>
+                    <td><?php echo $linha['portas'];?></td>
+                    <td><?php echo $linha['foto'];?></td>
+                    <td><?php echo $linha['ar'];?></td>
+                    <td><?php echo $linha['abs'];?></td>
+                    <td><?php echo $linha['alugado'];?></td>
+                    <td>
+                </tr>
                 <?php } ?>
             </tbody>
         </table>
         <br>
-        
+
 
         <br>
 
@@ -107,10 +114,20 @@ $lista = $categoria->listarStatusAlugado();
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
+        <script>
+        $(document).ready(function() {
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+        </script>
         <br>
 
         <a href="adicionar-carro.php" class="btn btn-warning">Adicionar mais carro</a>
     </div>
 </body>
+
 </html>

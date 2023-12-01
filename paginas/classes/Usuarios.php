@@ -52,12 +52,21 @@ class Usuarios{
     {
         $conexao = Conexaobd::pegarConexao();
 
-        $query = "UPDATE tb_usuarios SET codigo = :codigo, nome = :nome, sobrenome = :sobrenome, cpf = :cpf, nascimento = :nascimento, rua = :rua, bairro = :bairro, cep = :cep WHERE codigo = :codigo";
+        $query = "UPDATE tb_usuarios SET nome = :nome, sobrenome = :sobrenome, cpf = :cpf, nascimento = :nascimento, rua = :rua, bairro = :bairro, cep = :cep WHERE codigo = :codigo";
         $stmt = $conexao->prepare($query);
-        $stmt->execute([':codigo' => $codigo, ':nome' => $nome, ':sobrenome' => $sobrenome, ':cpf' => $cpf, ':nascimento' => $nascimento, ':rua' => $rua, ':bairro' => $bairro, ':cep' => $cep]);
 
-      
+        // Bind dos parâmetros
+        $stmt->bindParam(':codigo', $codigo);
+        $stmt->bindParam(':nome', $nome);
+        $stmt->bindParam(':sobrenome', $sobrenome);
+        $stmt->bindParam(':cpf', $cpf);
+        $stmt->bindParam(':nascimento', $nascimento);
+        $stmt->bindParam(':rua', $rua);
+        $stmt->bindParam(':bairro', $bairro);
+        $stmt->bindParam(':cep', $cep);
 
+        // Execute a query
+        $stmt->execute();
     }
 
     public function excluir($codigo)

@@ -55,14 +55,21 @@
 </head>
 <body>
     <form action="../paginas/registroBD.php" method="post" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;"> 
-	<img src="../img/logoSiteSmall.png" alt="Logo" style="position: absolute; top: 650px; left: calc(50% - 195px); width: 400px; height: 80px;">
+
 		<h2>cadastro</h2>
 
         <label for="nome">Seu nome</label>  
         <input type="text" id="nome" name="nome">
 
         <label for="email">E-mail:</label>
-        <input type="text" id="email" name="email">
+        <input type="email" id="email" name="email" style=" display: flex;
+    margin: 10px 0px;
+    width: 192px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);"
+	>
 
 		<label for="nome">Seu login: </label>  
         <input type="text" id="login" name="login">
@@ -81,9 +88,7 @@
         <input type="submit" value="confirmar">
     </form>
 
-    <footer>
-		<label>@2023 Rent Mobility</label>
-	</footer>
+
 </body>
 
 </html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Rent Mobility</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="style.css">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<style>
+		.cars li {
+			display: inline-block;
+			width: 30%;
+			margin-right: 4%;
+			vertical-align: top;
+			text-align: center;
+		}
+
+		.cars li:last-child {
+			margin-right: 0;
+		}
+
+		.cars li img {
+			max-width: 50%;
+			height: auto;
+		}
+	</style>
+</head>
+
+
+	<script src="script.js"></script>
+	<header>
+		<div class="col-3">
+			<a href="index.html"><img src="logoSiteSmall.png" style="border-radius: 20px; width: 360px;"></a>
+		</div>
+		<div class="col-9 row justify-content-end">
+			<div class="col-2">
+				<div class="btn_header">
+					<a href="login.html">
+						<button class="btnLogin-popup"> Produtos </button>
+					</a>
+				</div>
+			</div>
+			<div class="col-2">
+				<div class="btn_header">
+					<a href="login.html">
+						<button class="btnLogin-popup"> Entrar </button>
+					</a>
+				</div>
+			</div>
+			<div class="col-2">
+				<div class="login">
+					<a href="login.html">
+						<button class="btnLogin-popup"> Conta </button>
+					</a>
+				</div>
+			</div>
+
+		</div>
+
+
+	</header>
+	<br>
+	<body style="background-image: url('pexels-aleksandar-pasaric-4512439.jpg');background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;">
+	<!-- imagem creditada a aleksandar pasaric -->
+	<main style="height: 700px;">
+		<div class="container" style="background-color: #1f1b2d;color:white;padding: 40px;">
+		<div class="row">
+			<div class="col-6 justify-content-center  car-info">
+				<div class="col">
+					<img class="car-img-move" style="float: left;" src="hb20_2020.jpeg" alt="HB20">
+				</div>
+				<div class="row justify-content-center" style="padding-top:10px ;">
+					<a href="alugar.php">
+						<button style="width: 30%" id="ver-mais-btn">Ver mais sobre</button>
+					</a>
+					
+				</div>
+
+
+			</div>
+
+			<div class="col-2 subscription">
+				<div style="color: black;">
+					<div class="text">
+						<h1>HB 20 2020</h1>
+						<ul>
+							<li>Ano: 2020</li>
+							<li>Modelo: Comfort</li>
+							<li>Código: 024245-4</li>
+						</ul>
+					</div>
+
+				</div>
+				<div style="color: black; ">
+					<div class="text">
+						<br>
+						<label for="protection">Proteções</label>
+						<select name="protection" id="protection">
+							<option value="completo">Completo</option>
+							<option value="básico">Básico</option>
+						</select>
+
+
+
+						<p>Revisões gratuitas e assistência 24h</p>
+						<p>Proteção garantida com seguros</p>
+
+						<br>
+						<p>Diária: R$ 100,98</p>
+						<p>Semana: R$ 500,98</p>
+						<a href="alugar.html">
+
+						</a>
+						</form>
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="col-2 text-esp">
+				<h4>Motor</h4>
+				<p>Motorização 1.0</p>
+				<p>Combustível Álcool Gasolina</p>
+				<p>Consumo cidade (km/l) 9,1 12,8</p>
+				<p>Consumo estrada (km/l) 10,1 14,6</p>
+				<p>Direção hidráulica</p>
+
+
+
+			</div>
+			<div class="col-2 esp">
+				<h4>Especificações</h4>
+				<img src="TanqueDeGas.png">
+				<label>Tanque (L) 50</label>
+				<br>
+				<img src="cambio.png">
+				<label>Câmbio manual de 5 marchas</label>
+				<br>
+				<img src="porta.png">
+				<label>4 portas</label>
+				<br>
+				<img src="cold.png">
+				<label>Ar condicionado</label>
+				<br>
+				<img src="abs.png">
+				<label>Possuí ABS</label>
+			</div>
+		</div>
+	</div>
+
+	</main>
+
+
+	<footer style="font-style: italic;">
+		<p>Sobre nossa empresa: Alugar um carro da Rent Mobility em Sorocaba pode ser uma ótima opção para quem busca
+			liberdade e praticidade durante a viagem.</p>
+		<p> Com uma frota de veículos bem cuidada e diversificada, é possível escolher o carro que melhor atende às suas
+			necessidades. </p>
+		<p>Além disso, a Rent Mobility oferece preços competitivos e um serviço de atendimento ao cliente de qualidade,
+		</p>
+		<p>garantindo uma experiência satisfatória ao alugar um carro em Sorocaba.</p>
+		<a style="color: rgb(96, 96, 253);" href="pagina_termos.html">termos e serviços</a> <br> <a
+			style="color: rgb(96, 96, 253);" href="politica_privacidade.html">política de privacidade</a>
+		<p>&copy; 2023 Rent Mobility</p>
+	</footer>
+
+
+</body>
+
+</html>
+
+<style>
+.logo h1 {
+	font-size: 32px;
+	margin-right: 300px;
+	color: white;
+	margin-left: 180px;
+	
+}h1{
+	color: white;
+}
+ul{
+	color: white;
+}
+li{
+	color: white;
+}
+p,label{
+	color: white;
+}
+
+</style>

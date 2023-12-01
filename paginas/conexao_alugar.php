@@ -27,7 +27,7 @@ $bairro = $_POST['bairro'];
 $cep = $_POST['cep'];
 $stmt->execute();
 
-echo "Novo registro criado com sucesso";
+
 
 // Verificar se 'id' está definido e é um número
 if (isset($_POST['id']) && is_numeric($_POST['id'])) {
@@ -39,6 +39,7 @@ if (isset($_POST['id']) && is_numeric($_POST['id'])) {
   
     if ($conn->query($sql) === TRUE) {
       
+
     } else {
       echo "Erro ao atualizar registro: " . $conn->error;
     }
@@ -51,3 +52,5 @@ if (isset($_POST['id']) && is_numeric($_POST['id'])) {
   header('Location: index.php');
 
 ?>
+
+

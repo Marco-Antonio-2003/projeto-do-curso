@@ -46,7 +46,12 @@ background-size: cover;">
 <main role="main" class="flex-shrink-0">
     <div class="container text-center">
         <h2 style="color: #b0b0b0;">Lista de Carros</h2>
-        
+
+            <div class="input-group">
+                <input class="form-control" id="myInput" type="text" placeholder="Pesquisar carros">
+            </div>
+
+       <br>
         <table class="table" style="border-radius: 10px solid #b0b0b0;">
         <thead>
             <tr>
@@ -67,7 +72,7 @@ background-size: cover;">
                 <th>Ação</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="myTable">
             <?php
                 $servername = "localhost";
                 $username = "root";
@@ -80,6 +85,7 @@ background-size: cover;">
                 if ($conn->connect_error) {
                     die("Erro na conexão com o banco de dados: " . $conn->connect_error);
                 }
+
     
                 // Selecionar os dados da tabela
                 $sql = "SELECT * FROM tb_adicionar_carro";
@@ -121,6 +127,15 @@ background-size: cover;">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
 </body>
 </html>

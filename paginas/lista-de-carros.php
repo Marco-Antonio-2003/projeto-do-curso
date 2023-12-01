@@ -42,7 +42,7 @@ background-size: cover;">
 <div class="container">
     <h2 style="color: white;">Lista de Carros</h2>
     
-    <table class="table">
+    <table style="padding:10px" class="table">
         <thead class="thead-light">
             <tr>
                 <th>ID</th>

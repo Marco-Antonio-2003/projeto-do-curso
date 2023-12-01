@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
         <a href="index.php"><img src="../img/logoSiteSmall.png" style="border-radius: 20px; width: 360px;"></a>
     </div>
 </header>
+
 <body>
     <div class="container">
         <?php
@@ -35,27 +37,100 @@
             if ($veiculo) {
         ?>
         <br>
-                <h1>Alterar Veículo</h1>
-                <form action="alterar-veiculos-post.php" method="post">
-                    <!-- Campos do formulário preenchidos com os dados do veículo -->
-                    <input type="hidden" name="id" value="<?php echo $veiculo['id']; ?>">
-                    Nome: <input type="text" name="nome" value="<?php echo $veiculo['nome']; ?>" class="form-control mb-2"><br>
-                    Marca: <input type="text" name="marca" value="<?php echo $veiculo['marca']; ?>" class="form-control mb-2"><br>
-                    Modelo: <input type="text" name="modelo" value="<?php echo $veiculo['modelo']; ?>" class="form-control mb-2"><br>
-                    Ano: <input type="text" name="ano" value="<?php echo $veiculo['ano']; ?>" class="form-control mb-2"><br>
-                    Motorização: <input type="text" name="motorizacao" value="<?php echo $veiculo['motorizacao']; ?>" class="form-control mb-2"><br>
-                    Combustivel: <input type="text" name="combustivel" value="<?php echo $veiculo['combustivel']; ?>" class="form-control mb-2"><br>
-                    Direção: <input type="text" name="direcao" value="<?php echo $veiculo['direcao']; ?>" class="form-control mb-2"><br>
-                    Câmbio: <input type="text" name="cambio" value="<?php echo $veiculo['cambio']; ?>" class="form-control mb-2"><br>
-                    Portas: <input type="text" name="portas" value="<?php echo $veiculo['portas']; ?>" class="form-control mb-2"><br>
-                    Foto: <input type="file" name="foto" value="<?php echo $veiculo['foto']; ?>" class="form-control mb-2"><br>
-                    ar: <input type="text" name="ar" value="<?php echo $veiculo['ar']; ?>" class="form-control mb-2"><br>
-                    abs: <input type="text" name="abs" value="<?php echo $veiculo['abs']; ?>" class="form-control mb-2"><br>
-                    alugado: <input type="text" name="alugado" value="<?php echo $veiculo['alugado']; ?>" class="form-control mb-2"><br>
+        <h1>Alterar Veículo</h1>
+        <form action="alterar-veiculos-post.php" method="post">
 
-                    <input type="submit" value="Salvar Alterações" class="btn btn-primary">
-                </form>
-        <?php
+
+            <!-- Campos do formulário preenchidos com os dados do veículo -->
+            <input type="hidden" name="id" value="<?php echo $veiculo['id']; ?>">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        Nome: <input type="text" name="nome" value="<?php echo $veiculo['nome']; ?>"
+                            class="form-control mb-2"><br>
+                    </div>
+                    <div class="col-6">
+                        Marca: <input type="text" name="marca" value="<?php echo $veiculo['marca']; ?>"
+                            class="form-control mb-2"><br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        Modelo: <input type="text" name="modelo" value="<?php echo $veiculo['modelo']; ?>"
+                            class="form-control mb-2"><br>
+                    </div>
+                    <div class="col-6">
+                        Ano: <input type="text" name="ano" value="<?php echo $veiculo['ano']; ?>"
+                            class="form-control mb-2"><br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        Motorização: <input type="text" name="motorizacao"
+                            value="<?php echo $veiculo['motorizacao']; ?>" class="form-control mb-2"><br>
+                    </div>
+                    <div class="col-6">
+                        Combustivel: <input type="text" name="combustivel"
+                            value="<?php echo $veiculo['combustivel']; ?>" class="form-control mb-2"><br>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    Direção: <input type="text" name="direcao" value="<?php echo $veiculo['direcao']; ?>"
+                        class="form-control mb-2"><br>
+                </div>
+                <div class="col-4">
+                    Câmbio: <input type="text" name="cambio" value="<?php echo $veiculo['cambio']; ?>"
+                        class="form-control mb-2"><br>
+                </div>
+                <div class="col-4">
+                    Portas: <input type="text" name="portas" value="<?php echo $veiculo['portas']; ?>"
+                        class="form-control mb-2"><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    Foto: <input type="file" name="foto" value="<?php echo $veiculo['foto']; ?>"
+                        class="form-control mb-2"><br>
+                </div>
+
+            </div>
+            <div class="row">
+
+                <div class="col-6">
+                    ar: <input type="text" name="ar" value="<?php echo $veiculo['ar']; ?>"
+                        class="form-control mb-2"><br>
+
+                </div>
+                <div class="col-6">
+                    abs: <input type="text" name="abs" value="<?php echo $veiculo['abs']; ?>"
+                        class="form-control mb-2"><br>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-12">
+                alugado: <input type="text" name="alugado" value="<?php echo $veiculo['alugado']; ?>"
+                    class="form-control mb-2"><br>
+                </div>
+              
+            </div>
+            <div class="row">
+                <input type="submit" value="Salvar Alterações" class="btn btn-primary">
+            </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+    </form>
+    <?php
             } else {
                 echo "Veículo não encontrado.";
             }
@@ -71,4 +146,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
 </body>
+
 </html>
